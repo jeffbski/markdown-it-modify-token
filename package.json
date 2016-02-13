@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-modify-token",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "markdown-it plugin for modifying tokens in a markdown document. It can for example modify content or attributes for certain type of elements like links or images.",
   "main": "index.js",
   "scripts": {
