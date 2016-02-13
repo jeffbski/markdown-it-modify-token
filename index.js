@@ -17,8 +17,7 @@ function modifyToken(token, modifyFn, env) {
 function noop() { }
 
 module.exports = function (md) {
-    md.core.ruler.after(
-        'inline',
+    md.core.ruler.push(
         'modify-token',
         function (state) {
           var modifyFn = md.options.modifyToken || noop;
