@@ -1,0 +1,21 @@
+Test1
+.
+[Hello](test)
+.
+<p><a href="test" target="_blank">Hello</a></p>
+.
+
+Test2
+.
+![Hello](b)
+.
+<p><img src="b" alt="Hello" width="200px"></p>
+.
+
+
+Test3
+.
+![Hello](foo.gif)
+.
+<p><img src="foo.gif" alt="Hello"></p>
+.

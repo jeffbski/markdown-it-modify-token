@@ -1,0 +1,46 @@
+{
+  "name": "markdown-it-modify-token",
+  "version": "1.0.0",
+  "description": "markdown-it plugin for modifying tokens in a markdown document. It can for example modify content or attributes for certain type of elements like links or images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run unit",
+    "unit": "mocha -R spec",
+    "browserify": "mkdir -p dist && (echo \"$HEADER\"; browserify ./ -s markdownitModifyToken) > dist/markdown-it-modify-token.js",
+    "dist": "npm run test-ci; mkdir -p dist; export HEADER=\"/*! $(npm v . name) $(npm v . version) $(npm v . repository.url) @license $(npm v . license) */\"; npm run browserify; npm run uglify",
+    "uglify": "uglifyjs dist/markdown-it-modify-token.js -b beautify=false,ascii-only=true -c -m --preamble \"$HEADER\" > dist/markdown-it-modify-token.min.js",
+    "coverage": "rm -rf coverage;istanbul cover node_modules/.bin/_mocha",
+    "test-ci": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffbski/markdown-it-modify-token"
+  },
+  "keywords": [
+    "markdown",
+    "markdown-it",
+    "markdown-it-plugin",
+    "modify",
+    "token",
+    "link",
+    "image",
+    "element",
+    "attributes",
+    "attr"
+  ],
+  "author": "Jeff Barczewski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffbski/markdown-it-modify-token/issues"
+  },
+  "homepage": "https://github.com/jeffbski/markdown-it-modify-token",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.4.2",
+    "markdown-it": "^5.1.0",
+    "markdown-it-testgen": "^0.1.4",
+    "mocha": "^2.2.4"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,26 @@
+{
+  "name": "markdown-it-modify-token",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/jeffbski/markdown-it-modify-token",
+  "authors": [
+    "Jeff Barczewski <jeff.barczewski@gmail.com>"
+  ],
+  "description": "markdown-it plugin for modifying tokens in a markdown document. It can for example modify content or attributes for certain type of elements like links or images.",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "markdown",
+    "markdown-it"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
