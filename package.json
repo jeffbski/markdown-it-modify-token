@@ -10,7 +10,7 @@
     "dist": "npm run test-ci; mkdir -p dist; export HEADER=\"/*! $(npm v . name) $(npm v . version) $(npm v . repository.url) @license $(npm v . license) */\"; npm run browserify; npm run uglify",
     "uglify": "uglifyjs dist/markdown-it-modify-token.js -b beautify=false,ascii-only=true -c -m --preamble \"$HEADER\" > dist/markdown-it-modify-token.min.js",
     "coverage": "rm -rf coverage;istanbul cover node_modules/.bin/_mocha",
-    "test-ci": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
+    "test-ci": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -35,12 +35,13 @@
   },
   "homepage": "https://github.com/jeffbski/markdown-it-modify-token",
   "devDependencies": {
+    "browserify": "^12.0.2",
     "chai": "^3.5.0",
-    "coveralls": "^2.11.2",
     "istanbul": "^0.4.2",
     "markdown-it": "^5.1.0",
     "markdown-it-testgen": "^0.1.4",
-    "mocha": "^2.2.4"
+    "mocha": "^2.2.4",
+    "uglify-js": "^2.6.1"
   },
   "dependencies": {}
 }
